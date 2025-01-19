@@ -16,21 +16,16 @@ def main():
 
     for (x, y) in characters_n.items():
         if x.isalpha() == True :
-            print(x, y)
             characters_list.append({"name" : x, "num" : y})
     
     
-
-    print(characters_list)
     characters_list.sort(reverse=True, key=sort_it)
-    print(characters_list)
-
     
 
     print(f"--- Begin report of {book_path} ---")
     print(f"{count_words} words found in the document")
     for character in characters_list:
-        print(f"{character["name"]} was found {character["num"]} times") 
+        print(f"The '{character["name"]}' was found {character["num"]} times") 
     print("--- End report ---") 
 
 
