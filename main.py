@@ -22,16 +22,20 @@ def main():
     
 
     print(characters_list)
-    
+    characters_list.sort(reverse=True, key=sort_it)
+    print(characters_list)
 
     
 
     print(f"--- Begin report of {book_path} ---")
     print(f"{count_words} words found in the document")
-    print(f"{characters_list[0]} was found {characters_list[1]} times") 
+    for character in characters_list:
+        print(f"{character["name"]} was found {character["num"]} times") 
     print("--- End report ---") 
 
 
+def sort_it(list):
+    return list["num"]
 
 
 def count_the_characters(text):
