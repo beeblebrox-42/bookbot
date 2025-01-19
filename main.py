@@ -1,6 +1,6 @@
 def main():
 
-    
+    characters_list = []
     
     book_path = "books/frankenstein.txt"
 
@@ -13,12 +13,26 @@ def main():
     characters_n = count_the_characters(text)
         
     x = characters_n.items()
+
+    for (x, y) in characters_n.items():
+        if x.isalpha() == True :
+            print(x, y)
+            characters_list.append({"name" : x, "num" : y})
+    
+    
+
+    print(characters_list)
+    
+
     
 
     print(f"--- Begin report of {book_path} ---")
     print(f"{count_words} words found in the document")
-    print(f"{x}") 
+    print(f"{characters_list[0]} was found {characters_list[1]} times") 
     print("--- End report ---") 
+
+
+
 
 def count_the_characters(text):
     characters = {}
